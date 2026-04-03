@@ -1,0 +1,112 @@
+:root {
+  --primary: #2563eb;
+  --bg: #f8fafc;
+  --card: #ffffff;
+  --text: #1e293b;
+  --error: #ef4444;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background-color: var(--bg);
+  color: var(--text);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.container {
+  max-width: 800px;
+  width: 100%;
+  padding: 2rem;
+  text-align: center;
+}
+
+h1 { color: var(--primary); margin-bottom: 2rem; }
+
+.add-form, .list-section {
+  background: var(--card);
+  padding: 1.5rem;
+  border-radius: 12px;
+  box-shadow: 0 4px 6px -1px rgb(0 0 0 / 0.1);
+  margin-bottom: 2rem;
+}
+
+.input-group {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+input, select, button {
+  padding: 0.6rem;
+  border: 1px solid #e2e8f0;
+  border-radius: 6px;
+  font-size: 0.9rem;
+}
+
+button {
+  background: var(--primary);
+  color: white;
+  border: none;
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.error { color: var(--error); font-size: 0.8rem; margin: 0.5rem 0; }
+
+.list-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.total-badge {
+  background: var(--primary);
+  color: white;
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+  font-size: 0.85rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1rem;
+}
+
+.session-card {
+  border-top: 5px solid #cbd5e1;
+  padding: 1rem;
+  background: #f1f5f9;
+  border-radius: 8px;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.session-card.high { border-color: #ef4444; }
+.session-card.medium { border-color: #f59e0b; }
+.session-card.low { border-color: #10b981; }
+
+.session-card h3 { margin: 0 0 0.5rem; font-size: 1.1rem; }
+.session-card p { margin: 0.2rem 0; color: #64748b; font-size: 0.9rem; }
+
+.delete-btn {
+  background: none;
+  border: 1px solid #e2e8f0;
+  color: #64748b;
+  margin-top: 1rem;
+  width: 100%;
+}
+
+.delete-btn:hover { background: #ef4444; color: white; border-color: #ef4444; }
+
+@media (max-width: 600px) {
+  .input-group > * { width: 100%; }
+}
